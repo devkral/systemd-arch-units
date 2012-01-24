@@ -1,0 +1,13 @@
+Description=Prosody is a lua-based Jabber(XMPP)-server
+After=ddclient.service
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/prosody/prosody.pid
+ExecStart=/usr/bin/prosodyctl start
+ExecStop=/usr/bin/prosodyctl stop
+
+[Install]
+WantedBy=multi-user.target
+
