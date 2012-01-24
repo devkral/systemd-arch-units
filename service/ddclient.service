@@ -1,0 +1,9 @@
+Description=Update dynamic DNS entries for accounts on many dynamic DNS services.
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/ddclient -foreground
+
+[Install]
+WantedBy=multi-user.target
