@@ -1,3 +1,4 @@
+[Unit]
 Description=Prosody is a lua-based Jabber(XMPP)-server
 After=ddclient.service
 After=network.target
