@@ -5,10 +5,11 @@ After=network.target
 
 [Service]
 Type=forking
-PIDFile=/var/run/prosody/prosody.pid
+PIDFile=/run/prosody/prosody.pid
+ExecStartPre=/bin/mkdir -p /run/prosody/
+ExecStartPre=/bin/chown prosody:prosody /run/prosody
 ExecStart=/usr/bin/prosodyctl start
 ExecStop=/usr/bin/prosodyctl stop
 
 [Install]
 WantedBy=multi-user.target
-
