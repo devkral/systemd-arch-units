@@ -6,8 +6,7 @@ After=network.target
 [Service]
 Type=forking
 PIDFile=/run/prosody/prosody.pid
-ExecStartPre=/bin/mkdir -p /run/prosody/
-ExecStartPre=/bin/chown prosody:prosody /run/prosody
+ExecStartPre=/lib/systemd/scripts/PIDfoldcreat prosody
 ExecStart=/usr/bin/prosodyctl start
 ExecStop=/usr/bin/prosodyctl stop
 
