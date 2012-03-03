@@ -1,0 +1,22 @@
+#! /bin/sh
+
+##maybe: write this in c or c++ for more speed
+
+if [ "$1" = "--help" ] || [ "$1" = "" ]; then
+  echo "arg1=username [arg2=folder]"
+  exit
+fi
+## default action: create a folder under /run with name of the given username
+folder=/run/$1/
+
+## select a folder by using a second argument
+if [ "$2" != "" ]; then
+ folder=$2
+fi
+
+## check if folder is existing
+if [ ! -d /run/$folder/ ]; then
+/bin/mkdir -p $folder
+chown $1:$1 $folder
+fi
+exit 0
