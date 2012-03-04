@@ -3,7 +3,7 @@ Description=clamav daemon
 
 [Service]
 Type=forking
-PIDFile=/var/run/clamav/clamd.pid
+PIDFile=/run/clamav/clamd.pid
 ExecStart=/usr/sbin/clamd
 
 [Install]
